@@ -1,0 +1,96 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: #000; /* Fallback color */
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: blur(3px) brightness(0.7);
+}
+
+.stopwatch {
+    background: rgba(255, 255, 255, 0.5); /* Adjust the alpha value for transparency */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.controls button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+.controls #startStopBtn {
+    background-color: #4caf50;
+    color: white;
+}
+
+.controls #resetBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+.controls #lapBtn {
+    background-color: #2196f3;
+    color: white;
+}
+
+#laps {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+}
+
+#laps li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-weight: bold;
+}
