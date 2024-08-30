@@ -1,0 +1,148 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: #000; /* Fallback color */
+}
+
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: blur(3px) brightness(0.7);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Background color with transparency */
+    border: 2px solid #ccc; /* Border color */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for 3D effect */
+    padding: 20px;
+    width: 320px; /* Adjust width as needed */
+    text-align: center;
+}
+
+.stopwatch {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#display {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.controls button:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+#startStopBtn {
+    background-color: #4caf50;
+    color: white;
+}
+
+#resetBtn {
+    background-color: #f44336;
+    color: white;
+}
+
+#lapBtn {
+    background-color: #2196f3;
+    color: white;
+}
+
+#laps {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+    border-top: 1px solid #ddd;
+}
+
+#laps li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    font-weight: bold;
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column; /* Stack buttons and slider vertically */
+    align-items: center; /* Center align items */
+    margin-top: 20px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+    margin-bottom: 10px;
+}
+
+.audio-btn {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 10px 15px;
+    font-size: 16px;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+.audio-btn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+.volume-slider-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+}
